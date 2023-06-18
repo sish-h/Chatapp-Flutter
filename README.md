@@ -7,7 +7,7 @@
 Welcome to the **Full Stack Realtime Chat App** project, where we're building a scalable and secure real-time chat experience using the latest technologies. Whether you're a seasoned developer or a beginner, we invite you to contribute and be a part of this exciting journey!
 
 ## Table of Contents
------------------
+
 
 * [Introduction](#introduction)
 * [Features](#features)
@@ -20,12 +20,11 @@ Welcome to the **Full Stack Realtime Chat App** project, where we're building a 
 * [License](#license)
 
 ## 📝 Introduction
-------------
 
 This project aims to provide a real-time chat experience that's both scalable and secure. With a focus on modern technologies, we're building an application that's easy to use and maintain.
 
 ## ✨ Features
-------------
+
 
 * **Real-time Messaging**: Send and receive messages instantly using Socket.io 
 * **User Authentication & Authorization**: Securely manage user access with JWT 
@@ -36,7 +35,7 @@ This project aims to provide a real-time chat experience that's both scalable an
 
 
 ## 🛠️ Tech Stack
--------------
+
 
 * **Backend:** Node.js, Express, MongoDB, Socket.io
 * **Frontend:** React, TailwindCSS
@@ -49,7 +48,7 @@ This project aims to provide a real-time chat experience that's both scalable an
 
 
 ### 🔧 Prerequisites
---------------
+
 
 * **[Node.js](https://nodejs.org/)** (v14 or higher)
 * **[Docker](https://www.docker.com/get-started)** (for containerizing the app)
@@ -57,7 +56,7 @@ This project aims to provide a real-time chat experience that's both scalable an
 
 
 ### 📝 Setup .env File
-------------------
+
 
 1. Navigate to the `backend` directory:
 ```bash
@@ -72,14 +71,13 @@ PORT=5001
     > **Note:** Replace `your_jwt_secret_key` with a strong secret key of your choice.
 
 ### Clone the Repository
-----------------------
 
 ```bash
 git clone https://github.com/iemafzalhassan/full-stack_chatApp.git
 ```
 
 🏗️ Build and Run the Application
---------------------------------
+
 Follow these steps to build and run the application:
 
 1. Build & Run the Containers:
@@ -178,7 +176,7 @@ You can now interact with the real-time chat app and start messaging!
 
 
 ### 🤝 Contributing
--------------
+
 
 We welcome contributions from DevOps & Developer of all skill levels! Here's how you can contribute:
 
@@ -187,7 +185,6 @@ We welcome contributions from DevOps & Developer of all skill levels! Here's how
 **Submit pull requests:** If you have a fix or a feature you'd like to contribute, submit a pull request. Ensure your changes pass any linting or tests, if applicable.
 
 ### 🌐 Join the Community
---------------------
 
 We invite you to join our community of developers and contributors. Let's work together to build an amazing real-time chat application!
 
@@ -197,31 +194,31 @@ We invite you to join our community of developers and contributors. Let's work t
 * **Submit a pull request** to contribute code changes
 
 ## 🔮 Future Plans
---------------
+
 
 This project is evolving, and here are a few exciting things on the horizon:
 
 * [ ] **CI/CD Pipelines:** Implement Continuous Integration and Continuous Deployment pipelines to automate testing and deployment.
 * [ ] **Kubernetes (K8s):** Add Kubernetes manifests for container orchestration to deploy the app on cloud platforms like AWS, GCP, or Azure.
-* [] **Feature Expansion:** Add more features like group chats, media sharing, and user status updates.
+* [ ] **Feature Expansion:** Add more features like group chats, media sharing, and user status updates.
 * **Stay tuned for updates as we continue to improve and expand this project!**
 
 ---
 
 ## 📚 Project Snapshots:
 
-![Settings](./frontend/Public/settings.png)
+![Settings](frontend/public/settings.png)
 
-![chat](./frontend/Public/chat.png)
+![chat](frontend/public/chat.png)
 
-![logout](./frontend/Public/logout.png)
+![logout](/frontend/public/logout.png)
 
-![Login](./frontend/Public/login.png)
+![Login](/frontend/public/login.png)
 
 
 
 ## 📜 License
--------
+
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
