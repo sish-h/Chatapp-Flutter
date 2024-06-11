@@ -3,7 +3,7 @@ version: '3'
 services:
   mongo:
     image: mongo:latest
-    container_name: full-stack_mongo
+    container_name: chatapp_mongo
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -11,29 +11,31 @@ services:
     volumes:
       - mongo-data:/data/db
     networks:
-      - full-stack
+      - chatapp-network
     healthcheck:
-      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
       timeout: 5s
       retries: 3
+      start_period: 30s
 
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: full-stack_backend
+    container_name: chatapp_backend
     environment:
-      - MONGODB_URI=mongodb://root:admin@host.docker.internal:27017/full-stack_chatApp
+      - MONGODB_URI=mongodb://root:admin@mongo:27017/chatApp?authSource=admin
       - JWT_SECRET=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE3MzI0NjA1NTEsImV4cCI6MTc2Mzk5NjU1MSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.YTeR6zLCKuOPjz5CYfwxW1gXp_wP1gAnN3qSMJIFQFg
       - PORT=5001
       - NODE_ENV=production
     ports:
       - "5001:5001"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
     networks:
-      - full-stack
+      - chatapp-network
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
       interval: 10s
@@ -44,7 +46,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: full-stack_frontend
+    container_name: chatapp_frontend
     environment:
       - NODE_ENV=production
     ports:
@@ -52,7 +54,7 @@ services:
     depends_on:
       - backend
     networks:
-      - full-stack
+      - chatapp-network
 
 networks:
   chatapp-network:
