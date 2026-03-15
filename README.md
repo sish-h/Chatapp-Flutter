@@ -1,5 +1,5 @@
 # Chatapp-Flutter
-Realtime Chat App project, building a scalable and secure real-time chat experience using the latest technologies.
+Realtime Chat App project, building a scalable and secure real-time chat experience using the latest technologies
 
 ## About
 This project uses JavaScript as its primary language to create a seamless and fast real-time chat experience. Note that the name 'Chatapp-Flutter' might suggest a Flutter project, but this project actually utilizes JavaScript.
